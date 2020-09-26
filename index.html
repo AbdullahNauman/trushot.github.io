@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TruShot</title>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="./style.css"> 
+  <script>  
+    function ID_submitted() {
+    imageID = document.getElementById('id_field').value;  
+    window.location.replace("iframe.html?id=" + imageID);     
+  }  
+  </script>  
+  <style> 
+        body {  
+        background: none; 
+        background-color: #283044;
+    }  
+    .newTextColor { 
+        color: #EBF5EE;  
+    } 
+  </style> 
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  <header>
+    <h2><a href="#"><i class="ion-camera"></i> <span class = "newTextColor"> TruShot </span></a></h2>
+    <nav>
+      <ul>
+        <li>
+          <a class="btn" href="#" title="Register / Log In"><span class = "newTextColor">Contact Us</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="cover"> 
+    <h1 style = "font-size: 8em;" id = "main_block" class = "newTextColor"> Enter your ID. </h1> 
+    <br />  
+    <br />  
+    <div  class="flex-form">
+      <label for="from">
+        <i class="ion-checkmark-circled"></i>
+      </label>
+      <input type="search" placeholder="You'll find it in the TruShot app." / id = "id_field" />
+      <input type="submit" value="Submit" onclick="ID_submitted();">
+    </div>
+    <div id="madeby"> 
+      <span> 
+         SBUHacks 2020 | <a href="https://unsplash.com/@benblenner" target="_blank">Devpost</a>
+      </span>
+    </div> 
+    <div id="photocredit">
+      <span>
+       <!-- <a href="https://www.cnn.com/videos/politics/2018/09/08/nps-trump-inauguration-photos-edited-new-day-weekend-vpx.cnn" target="_blank"> Photo Credit: 2016 x  Presidential Inauguration, CNN</a> --> 
+      <a href = "play.google.com" target="_blank">Download App</a>
+      </span>
+    </div>
+  </div>
+
+</div>
+<!-- partial -->
+  
+</body>
+</html>

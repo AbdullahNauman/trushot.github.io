@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TruShot - Your image is ready</title>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="./style.css">  
+  <style> 
+    body {  
+        background: none; 
+        background-color: #283044;
+    } 
+    .secondPageText { 
+        color:  #EBF5EE;
+    } 
+    .iframe_code_holder {  
+        padding: 20mm;
+        text-align: center;   
+        border-radius: 0%;   
+    } 
+
+    .copy_paste_div { 
+        background-color: #EBF5EE; ;
+    }
+  </style> 
+  <script>    
+    //code for this function was taken from  
+    // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+    function getParameterByName(name, url) { 
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    } 
+    var getID = getParameterByName('id'); 
+    iframeSrc = "https://storage.googleapis.com/trushot-bucket/verify.html?id=" + getID;  
+  </script> 
+</head>
+<body>
+<div class="container">
+  <header>
+    <h2><a href="#"><span class = "secondPageText"><i class="ion-camera"></i> TruShot </span> </a></h2>
+    <nav>
+      <ul>
+        <li>
+          <a class="btn" href="#" title="Register / Log In"><span class = "secondPageText"> having trouble? snap us at trushot_snap </span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="cover"> 
+    <table>  
+        <tr> 
+            <th>  
+                <div  class = "iframe_code_holder">  
+                    <iframe id ="demo_iframe" width="420" height="390" src="https://storage.googleapis.com/trushot-bucket/index.html?=5b7ec3" border="0" frameborder="0" scrolling="no" align="left" hspace="0" vspace="0"></iframe>
+                </div>
+            </th>  
+            <th>
+                <div class = "iframe_code_holder copy_paste_div">  
+                    <h3>Want this image on your website?</h3>
+                    <p>Just copy + paste the code below!</p>
+                    <textarea id="code_textbox" name="w3review" rows="4" cols="50" style="border: 0mm; background-color:  #EBF5EE;"> 
+                    </textarea>
+                </div>  
+            </th> 
+        </tr>
+    </table>
+</div>
+
+</div> 
+<!-- partial -->
+<script>   
+    document.getElementById("demo_iframe").src = iframeSrc; 
+    document.getElementById('code_textbox').value = "<iframe src=" + iframeSrc + "></iframe>"; 
+</script>
+</body>
+</html>
