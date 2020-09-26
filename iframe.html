@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>TruShot - Your image is ready</title>
-  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="./style.css">  
+  <link rel="stylesheet" href="./style.css">  
   <style> 
     body {  
         background: none; 
@@ -15,12 +15,16 @@
     .iframe_code_holder {  
         padding: 20mm;
         text-align: center;   
-        border-radius: 0%;   
+        border-radius: 0%;    
+        
     } 
 
     .copy_paste_div { 
-        background-color: #EBF5EE; ;
-    }
+        background-color: #EBF5EE; ; 
+        box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3); 
+    } 
+
+
   </style> 
   <script>    
     //code for this function was taken from  
@@ -36,12 +40,13 @@
     } 
     var getID = getParameterByName('id'); 
     iframeSrc = "https://storage.googleapis.com/trushot-bucket/verify.html?id=" + getID;  
-  </script> 
+  </script>  
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
 </head>
 <body>
 <div class="container">
   <header>
-    <h2><a href="#"><span class = "secondPageText"><i class="ion-camera"></i> TruShot </span> </a></h2>
+    <h2><a href="#"><span class = "secondPageText"><ion-icon name="aperture-outline"></ion-icon> TruShot </span> </a></h2>
     <nav>
       <ul>
         <li>
@@ -76,6 +81,7 @@
 <script>   
     document.getElementById("demo_iframe").src = iframeSrc; 
     document.getElementById('code_textbox').value = "<iframe src=" + iframeSrc + "></iframe>"; 
-</script>
+</script> 
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script> 
 </body>
 </html>
